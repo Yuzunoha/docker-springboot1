@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.service.InnerService;
 import com.example.demo.service.LambdaService;
 import com.example.demo.service.PaizaService;
 
@@ -16,6 +17,7 @@ public class HelloController {
 
     private final PaizaService paizaService;
     private final LambdaService lambdaService;
+    private final InnerService innerService;
 
     @GetMapping("/index")
     public String index() {
@@ -25,5 +27,10 @@ public class HelloController {
     @GetMapping("/test")
     public String test() {
         return lambdaService.test();
+    }
+
+    @GetMapping("/inner")
+    public String inner() {
+        return innerService.run();
     }
 }
