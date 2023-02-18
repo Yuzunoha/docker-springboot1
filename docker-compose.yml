@@ -1,7 +1,6 @@
 version: '3.5'
 services:
   app:
-    container_name: springboot_container
     tty: true
     build: ./docker/app
     volumes:
