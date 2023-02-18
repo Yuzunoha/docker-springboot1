@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("/index")
     public String index() {
+        System.out.println("ログは出るかな");
         return "Dockerからこんにちは。";
     }
 }
