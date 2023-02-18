@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.service.LambdaService;
 import com.example.demo.service.PaizaService;
 
 import lombok.RequiredArgsConstructor;
@@ -14,9 +15,15 @@ import lombok.RequiredArgsConstructor;
 public class HelloController {
 
     private final PaizaService paizaService;
+    private final LambdaService lambdaService;
 
     @GetMapping("/index")
     public String index() {
         return paizaService.splitAndParse();
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return lambdaService.test();
     }
 }
